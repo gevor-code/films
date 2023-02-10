@@ -1,0 +1,194 @@
+.card_div {
+    gap: 10px;
+    background-image: url("https://images.alphacoders.com/787/787294.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 92.1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.films_div {
+    width: 300px;
+    min-height: 500px;
+    border: 1px solid grey;
+    position: relative;
+
+}
+
+.films_div:hover .card_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.films_div:hover .hover_div {
+    background-size: initial;
+}
+
+.films_div:hover .card_body2 {
+    display: none;
+}
+
+.hover_div {
+    width: 100%;
+    height: 100%;
+    background-color: #09223b;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px
+}
+
+.card_body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: rgba(60, 59, 59, 0.55);
+    transition: 0.5s;
+    display: none;
+    color: #ffffff;
+    font-family: 'Kalam cursive';
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+
+}
+
+.card_body2 {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 16px;
+    background: rgb(100, 100, 100, 0.3);
+}
+
+.film_name {
+    font-family: 'Kalam';
+    font-size: 22px;
+    color: antiquewhite;
+}
+
+.btn_del {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.btn_del:hover,
+.btn_del:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+
+.btn_del:active {
+    opacity: .5;
+}
+
+.learn_more {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+.learn_more:hover {
+    color: white;
+}
+
+.next_prev {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #18181a;
+    color: #18181a;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 18px 18px 17px;
+    text-decoration: none;
+    cursor: pointer;
+    background: #fff;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.next_prev span:first-child {
+    position: relative;
+    transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+    z-index: 10;
+}
+
+.next_prev span:last-child {
+    color: white;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+    z-index: 100;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translateY(225%) translateX(-50%);
+    height: 14px;
+    line-height: 13px;
+}
+
+.next_prev:after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform-origin: bottom center;
+    transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+    transform: skewY(9.3deg) scaleY(0);
+    z-index: 50;
+}
+
+.next_prev:hover:after {
+    transform-origin: bottom center;
+    transform: skewY(9.3deg) scaleY(2);
+}
+
+.next_prev:hover span:last-child {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 1;
+    transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}

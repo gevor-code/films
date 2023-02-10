@@ -1,0 +1,100 @@
+.back_log {
+    background-image: url("https://www.teahub.io/photos/full/40-408004_cinema-wallpapers.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 92.1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.log_div {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, .4);
+    color: #fff;
+    border-radius: 35px;
+    width: clamp(360px, 7vw, 700px);
+
+}
+
+.login_style {
+    padding: 9px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    align-items: center;
+}
+
+
+.btn_log {
+    all: unset;
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    position: relative;
+    color: #f0f0f0;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.btn_log::after,
+.btn_log::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all .4s;
+}
+
+.btn_log::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: #28282d;
+    border-radius: 10px;
+}
+
+.btn_log::after {
+    transform: translate(10px, 10px);
+    width: 35px;
+    height: 35px;
+    background: #ffffff15;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+}
+
+.btn_log:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+}
+
+.btn_log:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+}
+
+.btn_log:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+}
+
+.log_error {
+    color: red;
+}

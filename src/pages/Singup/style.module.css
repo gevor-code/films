@@ -1,0 +1,120 @@
+.error_message {
+    color: red;
+    font-family: cursive;
+    text-align: center;
+}
+
+.btn_smb {
+    align-items: center;
+    background-color: #0A66C2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+}
+
+.btn_smb:hover,
+.btn_smb:focus {
+    background-color: #16437E;
+    color: #ffffff;
+}
+
+.btn_smb:active {
+    background: #09223b;
+    color: rgb(255, 255, 255, .7);
+}
+
+.btn_smb:disabled {
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .3);
+}
+
+.radio_part {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+input[type="radio"] {
+    /* ...existing styles */
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em;
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+.btn_part {
+    margin: 6px;
+    padding: 6px;
+}
+
+.radio_div {
+
+    gap: 20px;
+    display: flex;
+    align-items: center;
+
+}
+
+label {
+    font-family: cursive;
+}
+
+.background_part {
+    background-image: url("https://www.teahub.io/photos/full/18-180656_1920x1080-movie-making-wallpaper-movie-film-video-film.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 92.1vh;
+}
+
+
+.form_part {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 71%;
+    width: clamp(360px,7vw,700px);
+    background-color: #fff;
+    border-radius: 35px;
+    text-align: center;
+}
+

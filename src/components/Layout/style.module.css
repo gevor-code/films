@@ -1,0 +1,10 @@
+.ul_part {
+    display: flex;
+    flex-direction: row;
+    gap: 40px
+}
+
+.header_part {
+    position: sticky;
+    top: 0;
+}
