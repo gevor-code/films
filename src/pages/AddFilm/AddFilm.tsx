@@ -10,7 +10,7 @@ import {getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
 
 
 const AddFilm = () => {
-    const {register, handleSubmit, formState: {errors}} = useForm<Film>()
+    const {register, reset,handleSubmit, formState: {errors}} = useForm<Film>()
     const [error, setError] = useState(null)
     const userCollection = collection(db, EnumFirestore.FILM)
 
@@ -34,17 +34,18 @@ const AddFilm = () => {
         }
     }
     const addMovie = async (movie: Film) => {
+
         console.log(movie)
         const userId = auth.currentUser?.uid;
         if (!userId) {
             // @ts-ignore
             setError('Error: No film is currently add');
-            return;
+            return
         }
 
         try {
             await photoPart(movie,userId)
-
+            reset()
         } catch (err) {
             // @ts-ignore
             setError(`Error: ${err.message}`);

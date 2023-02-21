@@ -11,8 +11,8 @@ import {auth} from "../../firebase/firebase-config";
 
 
 const FeedBack = () => {
-    const {id}=useParams()
-    const {handleSubmit} = useForm<TypeFirestore>();
+    const {id} = useParams()
+    const {reset} = useForm<TypeFirestore>();
     const [star, setStar] = useState(0)
     const [text, setText] = useState('');
     const dispatch = useAppDispatch()
@@ -27,15 +27,16 @@ const FeedBack = () => {
     }, []);
     const saveCom = (e: FormEvent) => {
         e.preventDefault()
-        const obj={comment:text,
-            raiting:star,
-            filmId:id,
-            userId:auth.currentUser?.uid
+        const obj = {
+            comment: text,
+            raiting: star,
+            filmId: id,
+            userId: auth.currentUser?.uid
         }
+        reset()
         dispatch(
-            addNewData({collectionName: EnumFirestore.FEEDBACK, obj:obj})
-      )
-
+            addNewData({collectionName: EnumFirestore.FEEDBACK, obj: obj})
+        )
     }
     return (
         <>

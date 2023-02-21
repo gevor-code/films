@@ -5,29 +5,34 @@ import {EnumFirestore} from "../../types/type";
 import {useEffect} from "react";
 import {getFeedBack} from "../../features/film/filmAPI";
 
-const Reviews = () => {
 
-    const { id } = useParams();
+const Reviews = () => {
+    const {id} = useParams();
     const dispatch = useAppDispatch();
     const feedback = useAppSelector((state: any) => state.film.feedback);
 
     useEffect(() => {
         if (id) {
-            dispatch(getFeedBack({ collectionName: EnumFirestore.FEEDBACK, id }));
+            dispatch(getFeedBack({collectionName: EnumFirestore.FEEDBACK, id}));
+
         }
-    }, [id, dispatch]);
+    }, [id]);
 
     return (
-        <div>
-            <h1>Reviews</h1>
-            {feedback ? (
-                <>
-                    <p>Comment: {feedback.text}</p>
-                    <p>Stars: {feedback.stars}</p>
-                </>
-            ) : (
-                <p>No feedback found</p>
-            )}
+        <div className={st.background_div}>
+            {feedback && feedback.map((elm: { comment: string; raiting: number, id: number }) => (
+                <div key={elm.id}>
+                    <div className={st.review_part}>
+                        <h4><i className="fas fa-user-circle" style={{marginRight: "10px"}}></i>
+                            {elm.comment}</h4>
+                        <h4> {
+                            [...Array(elm.raiting)].map((star, index) => (
+                                <i key={index} className="fas fa-star" style={{color: "gold"}}></i>
+                            ))
+                        }</h4>
+                    </div>
+                </div>
+            ))}
         </div>
     );
 }

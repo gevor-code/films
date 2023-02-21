@@ -14,6 +14,11 @@ export enum EnumFirestore {
     FILM = "film",
     FEEDBACK="feedback"
 }
+export interface Reviews{
+    comment:string,
+    raiting?:number,
+    id?:number
+}
 export interface Film{
     id?:string,
     name:string,

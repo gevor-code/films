@@ -1,0 +1,111 @@
+.profile_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-image: url("https://i.pinimg.com/originals/cb/35/a6/cb35a6698ade80fdaef741685e273bf0.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 92.4vh;
+
+}
+
+.info_part {
+    margin-top: 14px;
+    width: 12rem;
+}
+
+.name_part {
+    font-weight: bold;
+    color: #c2d3eb;
+    font-family: 'Allan';
+    font-size: 20px;
+
+}
+
+.no_user {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+
+.save_changes {
+    background-color: transparent;
+    border: 1px solid #103436;
+    box-sizing: border-box;
+    color: #add1ff;
+    font-family: "Avenir Next LT W01 Bold", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 16px 23px;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    border-radius: 20px;
+}
+
+.save_changes:hover,
+.save_changes:active {
+    outline: 0;
+}
+
+.save_changes:hover {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.save_changes:before {
+    background-color: #D5EDF6;
+    content: "";
+    height: calc(100% + 3px);
+    position: absolute;
+    right: -7px;
+    top: -9px;
+    transition: background-color 300ms ease-in;
+    width: 100%;
+    z-index: -1;
+}
+
+.save_changes:hover:before {
+    background-color: #6DCFF6;
+}
+
+@media (min-width: 768px) {
+    .save_changes {
+        padding: 16px 32px;
+    }
+}
+
+.changes_div {
+    display: flex;
+    justify-content: center;
+}
+
+.bg_div {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding: 6px;
+    background-color: rgb(0 1 13 / 40%);
+    border-radius: 35px;
+    width: clamp(360px, 7vw, 700px);
+    align-items: center;
+    text-align: center;
+}
+
+.info_prof {
+    color: #c2d3eb;
+    font-family: 'Allan';
+    font-size: 36px;
+}
+@media  (max-width:460px) {
+    .bg_div{
+        width: clamp(240px,7vw,400px);
+        gap: 1px;
+        padding: 0;
+    }
+}

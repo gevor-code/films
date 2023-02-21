@@ -4,7 +4,9 @@ import {getAllData, getDataById, getFeedBack} from "./filmAPI";
 const initialState = {
     films:[],
     film:{},
-    feedback:{}
+    feedback:[],
+    user: {}
+
 
 }
 const filmSlice = createSlice({
@@ -16,6 +18,9 @@ const filmSlice = createSlice({
         },
         deleteFilm:(state,action)=>{
           state.films=state.films.filter((a:any)=>a.id!=action.payload)
+        },
+        getUser: (state, action) => {
+            state.user = action.payload
         }
 
 
@@ -35,4 +40,4 @@ const filmSlice = createSlice({
     }
 })
 export default filmSlice.reducer
-export const {getFilm,deleteFilm} = filmSlice.actions
+export const {getFilm,deleteFilm,getUser} = filmSlice.actions

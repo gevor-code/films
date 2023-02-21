@@ -16,16 +16,15 @@ const MyRouter = (): JSX.Element => {
         <div>
             <BrowserRouter>
                 <Routes>
-                    <Route path="" element={<Layout/>}>
-                        <Route path="/" element={<ShowFilms/>}/>
-                        <Route path="/singin" element={<SingIn/>}/>
-                        <Route path="/singup" element={<SingUp/>}/>
-                    </Route>
-                    <Route path="" element={<Out/>}>
-                        <Route path="/profile" element={<Profile/>}/>
-                        <Route path='/addfilm' element={<AddFilm/>}/>
-                        <Route path='/film/:id' element={<FilmDetails/>}/>
-                        <Route path='/film/reviews/:id' element={<Reviews/>}/>
+                    <Route path="" element={<Out />}>
+                        <Route path="/" element={<ShowFilms />} />
+                        <Route path="/singin" element={<SingIn />} />
+                        <Route path="/singup" element={<SingUp />} />
+
+                        <Route path="/profile" element={<Profile />} />
+                        <Route path='/addfilm' element={<AddFilm />} />
+                        <Route path='/film/:id' element={<FilmDetails />} />
+                        <Route path='/film/reviews/:id' element={<Reviews />} />
                     </Route>
 
                 </Routes>

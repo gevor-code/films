@@ -1,5 +1,5 @@
 import {TypeFirestore} from "../types/type";
-import {addDoc, collection, doc, getDocs, deleteDoc, getDoc} from "firebase/firestore";
+import {addDoc, collection, doc, getDocs, deleteDoc, getDoc, query, where, updateDoc} from "firebase/firestore";
 import {db} from "./firebase-config";
 
 
@@ -28,7 +28,16 @@ export const getItem = async ({collectionName, id}: any) => {
 
 
 export const getFb = async ({collectionName, id}: any) => {
-    const info = await doc(db, collectionName, id)
-    const data2 = await (await getDoc(info)).data()
-    return {...data2, id: id}
+    const coll = collection(db, collectionName)
+    const info = await getDocs(query(coll,where('filmId','==',id)))
+    return info.docs.map((elm)=> ({...elm.data(),id:elm.id})
+    )
+}
+export const updateData=async({collectionName,id,obj}:any)=>{
+    const coll= collection(db,collectionName)
+    const info=await doc(db,collectionName,id)
+    await updateDoc(info,obj).then(r=>{
+    }).catch((er)=>{
+    })
+    return 'data updated'
 }

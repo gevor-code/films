@@ -1,0 +1,21 @@
+.background_div {
+    background-image: url("https://images.unsplash.com/photo-1508778552286-12d4c6007799?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHRoZWF0cmV8ZW58MHx8MHx8&w=1000&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 92.4vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.review_part {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, .4);
+    color: #fff;
+    border-radius: 35px;
+    width: clamp(360px, 7vw, 700px);
+}
